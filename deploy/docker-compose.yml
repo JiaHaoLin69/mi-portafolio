@@ -1,0 +1,8 @@
+services:
+  web:
+    build:
+      context: .. #portfolio
+      dockerfile: dockerfile
+    container_name: ctportfolio
+    ports:
+      - "8888:80"

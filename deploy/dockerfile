@@ -9,7 +9,7 @@ RUN apt update && apt install -yq --no-install-recommends \
     net-tools iputils-ping
 #Creacion de usuario 
 RUN useradd -rm -d /home/jiahaolinwu -s /bin/bash ${USUARIO}
-RUN echo "${USUARIO}:jiahaolinwu" | chapaswwd
+RUN echo "${USUARIO}:${PASSWORD}" | chapaswwd
 RUN echo "Bienvenido Jia Hao a la empresa" > /home/jiahaolinwu/hola.txt
 #Directorio de trabajo
 WORKDIR /usr/local/apache2/htdocs

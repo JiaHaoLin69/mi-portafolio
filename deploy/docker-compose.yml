@@ -5,7 +5,6 @@ services:
       dockerfile: ./deploy/dockerfile
       args: #Variables de DFILE para la construcción de las imagenes 
         - USUARIO=jiahaolinwu
-        - PASSWORD=jiahaolinwu
     container_name: ctportfolio
     ports:
       - "8888:80"

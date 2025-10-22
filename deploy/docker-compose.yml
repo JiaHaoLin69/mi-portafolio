@@ -3,6 +3,8 @@ services:
     build:
       context: .. #portfolio
       dockerfile: dockerfile
+      args: #Variables de DFILE para la construcción de las imagenees
+        - USUARIO=jiahaolinwu
     container_name: ctportfolio
     ports:
       - "8888:80"

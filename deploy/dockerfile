@@ -1,4 +1,12 @@
-FROM httpd:2.4
+FROM ubuntu
+RUN apt update && apt install -yq --no-install-recommends \
+    apache2 \
+    libapache2-mod-php7.2 \
+    nano \
+    curl \
+    net-tools iputils-ping
+
 WORKDIR /usr/local/apache2/htdocs
 COPY ../src .
 EXPOSE 80
+CMD apachectl -DFOREGROUND

@@ -1,0 +1,6 @@
+FROM httpd:2.4
+RUN apt update
+RUN apt install nano
+WORKDIR /usr/local/apache2/htdocs
+COPY ../src .
+EXPOSE 80

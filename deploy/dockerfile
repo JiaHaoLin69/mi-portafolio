@@ -13,7 +13,7 @@ RUN useradd -rm -d /home/jiahaolinwu -s /bin/bash ${USUARIO}
 RUN echo "${USUARIO}:${PASSWORD}" | chpaswwd
 RUN echo "Bienvenido Jia Hao a la empresa" > /home/jiahaolinwu/hola.txt
 #Directorio de trabajo
-WORKDIR /usr/local/apache2/htdocs
+WORKDIR /var/www/html
 #Copia de archivos
 COPY ../src .
 #Exposicion de puerto

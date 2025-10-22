@@ -2,7 +2,7 @@ services:
   web:
     build:
       context: .. #portfolio
-      dockerfile: dockerfile
+      dockerfile: ./deploy/dockerfile
       args: #Variables de DFILE para la construcción de las imagenes 
         - USUARIO=jiahaolinwu
         - PASSWORD=jiahaolinwu

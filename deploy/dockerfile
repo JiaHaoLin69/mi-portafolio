@@ -1,0 +1,21 @@
+#Imagen base de apache con ubuntu actualizado
+FROM ubuntu
+ARG USUARIO
+#Instalacion de paquetes ejje
+RUN apt update && apt install -yq --no-install-recommends \
+    apache2 \
+    nano \
+    curl \
+    net-tools iputils-ping
+#Creacion de usuario 
+RUN useradd -rm -d /home/jiahaolinwu -s /bin/bash ${USUARIO}
+RUN echo "${USUARIO}:jiahaolinwu" | chpasswd
+RUN echo "Bienvenido ${USUARIO} a la empresa" > /home/${USUARIO}/hola.txt
+#Directorio de trabajo
+WORKDIR /var/www/html
+#Copia de archivos
+COPY ../src .
+#Exposicion de puerto
+EXPOSE 80
+#Comando para iniciar apache
+CMD apachectl -DFOREGROUND

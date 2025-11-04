@@ -10,3 +10,5 @@ RUN apt update && apt install -yq --no-install-recommends \
 RUN useradd -rm -d /home/jiahaolinwu -s /bin/bash ${USUARIO}
 RUN echo "${USUARIO}:jiahaolinwu" | chpasswd
 RUN echo "Bienvenido ${USUARIO} a la empresa" > /home/${USUARIO}/hola.txt
+
+CMD ["tail", "-f", "/dev/null"]

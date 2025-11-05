@@ -14,6 +14,7 @@ WORKDIR /root/admin/base
 #1 Relativo al directorio base donde se encuentra ibbase --> docker build
 COPY  ./dockerfiles/base/Admin/start.sh  . 
 # 1 Relativo al ruta del contexto (caronte) en el docker-compose.yml --> docker build
+# Docker compose up -d --build
 # 2 workdir dentro del contenedor
 #COPY ./dockerfiles/base/Admin/start.sh  .
 RUN chmod +x ./start.sh

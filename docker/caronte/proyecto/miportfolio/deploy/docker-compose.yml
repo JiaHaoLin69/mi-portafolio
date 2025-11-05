@@ -1,10 +1,8 @@
 services:
   web:
     build:
-      context: .. #portfolio
-      dockerfile: ./deploy/dockerfile
+      context: /home/jiahaolin/repositorios/HLC/jiaHaoHLC/docker/caronte/
+      dockerfile: ./dockerfiles/base/ubbase 
       args: #Variables de DFILE para la construcción de las imagenes 
         - USUARIO=jiahaolinwu
-    container_name: ctportfolio
-    ports:
-      - "8888:80"
+    container_name: ctbase

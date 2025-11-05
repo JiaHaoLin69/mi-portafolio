@@ -1,7 +1,15 @@
 #!/bin/bash
 
-# Encargada de mantener el contenedor en ejecución
-tail -f /dev/null
+newUser(){
+    useradd -rm -d /home/jiahaolin -s  /bin/bash jiahaolin
+    echo "jiahaolin:1234" | chpasswd
+    echo "Bienvenido jiahaolin ..." > /home/jiahaolin/bienvenida.txt
+}
 
+main(){
+    newUser
+    # Encargada de mantener el contenedor en ejecución de Background
+    tail -f /dev/null
+}
 
-
+main

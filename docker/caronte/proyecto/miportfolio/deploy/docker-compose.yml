@@ -1,7 +1,7 @@
 services:
   web:
     build:
-      context: /home/jiahaolin/jiaHaoHLC/docker/caronte/
+      context: /home/jiahaolin/jiaHaohlc/docker/caronte/
       dockerfile: ./dockerfiles/base/ubbase 
       args: #Variables de DFILE para la construcción de las imagenes 
         - USUARIO=jiahaolinwu

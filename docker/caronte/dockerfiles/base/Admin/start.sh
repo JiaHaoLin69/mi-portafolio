@@ -19,7 +19,7 @@ newUser(){
     if [ "$?" -eq 0 ]
     then
         useradd -rm -d /home/${USUARIO} -s  /bin/bash ${USUARIO} 
-        echo "${USUARIO} :${PASSWORD}" | chpasswd
+        echo "${USUARIO}:${PASSWORD}" | chpasswd
         echo "Bienvenido ${USUARIO} ..." > /home/${USUARIO}/bienvenida.txt
     fi
 

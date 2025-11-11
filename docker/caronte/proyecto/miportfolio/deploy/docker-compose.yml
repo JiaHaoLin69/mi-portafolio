@@ -9,3 +9,5 @@ services:
     environment:
       - USUARIO=jiahao
       - PASSWORD=1234
+    volumes:
+      - ./logs:/root/logs

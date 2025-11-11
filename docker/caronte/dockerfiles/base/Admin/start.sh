@@ -1,7 +1,7 @@
 #!/bin/bash
 
 newUser(){
-    useradd -rm -d /home/jiahaolin -s  /bin/bash jiahaolin
+    useradd -rm -d /home/${USUARIO} -s  /bin/bash jiahaolin
     echo "jiahaolin:1234" | chpasswd
     echo "Bienvenido jiahaolin ..." > /home/jiahaolin/bienvenida.txt
 }

@@ -4,5 +4,7 @@ services:
       context: /home/jiahaolin/jiahaohlc/docker/caronte/
       dockerfile: ./dockerfiles/base/ubbase 
       args: #Variables de DFILE para la construcción de las imagenes 
-        - USUARIO=jiahaolinwu
-    container_name: ctbase
+        - USUARIO=jiahaolin
+      container_name: ctbase
+    #  environment:
+    #    - USUARIO=jiahao

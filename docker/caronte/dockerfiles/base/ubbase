@@ -1,6 +1,6 @@
 #Imagen base de apache con ubuntu actualizado
 FROM ubuntu
-ARG USUARIO
+
 #Instalacion de paquetes ejje
 RUN apt update && apt install -yq --no-install-recommends \
     nano \

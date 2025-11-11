@@ -1,9 +1,12 @@
 #!/bin/bash
 
+#Carga las variables de entorno basadas en el docker compose
+set -e
+
 newUser(){
-    useradd -rm -d /home/jiahaolin -s  /bin/bash jiahaolin
-    echo "jiahaolin:1234" | chpasswd
-    echo "Bienvenido jiahaolin ..." > /home/jiahaolin/bienvenida.txt
+    useradd -rm -d /home/${USUARIO} -s  /bin/bash ${USUARIO} 
+    echo "${USUARIO} :1234" | chpasswd
+    echo "Bienvenido ${USUARIO} ..." > /home/${USUARIO}/bienvenida.txt
 }
 
 main(){

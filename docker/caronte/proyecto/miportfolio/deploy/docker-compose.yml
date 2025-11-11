@@ -8,3 +8,4 @@ services:
     container_name: ctbase
     environment:
       - USUARIO=jiahao
+      - PASSWORD=1234

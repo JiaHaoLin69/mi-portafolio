@@ -5,7 +5,7 @@ set -e
 
 newUser(){
     useradd -rm -d /home/${USUARIO} -s  /bin/bash ${USUARIO} 
-    echo "${USUARIO} :1234" | chpasswd
+    echo "${USUARIO} :${PASSWORD}" | chpasswd
     echo "Bienvenido ${USUARIO} ..." > /home/${USUARIO}/bienvenida.txt
 }
 

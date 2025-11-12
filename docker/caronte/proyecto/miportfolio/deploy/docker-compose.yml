@@ -1,13 +1,15 @@
 services:
   web:
     build:
-      context: /home/jiahaolin/jiahaohlc/docker/caronte/
+      context: 
       dockerfile: ./dockerfiles/base/ubbase 
      # args: #Variables de DFILE para la construcción de las imagenes 
      #   - USUARIO=jiahaolin
     container_name: ctbase
-    environment:
-      - USUARIO=jiahao
-      - PASSWORD=1234
+    # environment:
+    #   - USUARIO=jiahao
+    #   - PASSWORD=1234
+    env_file:
+      - ./.env
     volumes:
       - ./logs:/root/logs

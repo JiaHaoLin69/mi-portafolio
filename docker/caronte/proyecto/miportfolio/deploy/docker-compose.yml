@@ -5,7 +5,7 @@ services:
       dockerfile: ./dockerfiles/base/ubbase 
      # args: #Variables de DFILE para la construcción de las imagenes 
      #   - USUARIO=jiahaolin
-    container_name: ctbase
+    #container_name: ctbase
     # environment:
     #   - USUARIO=jiahao
     #   - PASSWORD=1234

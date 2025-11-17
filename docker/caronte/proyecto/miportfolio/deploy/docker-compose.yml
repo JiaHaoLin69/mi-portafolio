@@ -10,7 +10,7 @@ services:
     #   - USUARIO=jiahao
     #   - PASSWORD=1234
     ports:
-      - "${PORT}:${PORT}"
+      - ${PORT_SSH}:${PORT_SSH}
     env_file:
       - ./.env
     volumes:

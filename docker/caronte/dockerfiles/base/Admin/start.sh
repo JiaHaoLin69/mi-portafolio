@@ -10,9 +10,10 @@ main(){
     # ...
     touch /root/logs/informe.log
     newUser
-    # Gestión del ssh --> getssh.sh
+    # Gestión del ssh --> mainssh.sh
     configurar_ssh
     # Encargada de mantener el contenedor en ejecución de Background
+    
     tail -f /dev/null
 }
 

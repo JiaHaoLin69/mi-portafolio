@@ -9,6 +9,8 @@ services:
     # environment:
     #   - USUARIO=jiahao
     #   - PASSWORD=1234
+    ports:
+      - "${PORT}:${PORT}"
     env_file:
       - ./.env
     volumes:

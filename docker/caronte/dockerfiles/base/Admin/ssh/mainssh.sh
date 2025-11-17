@@ -10,6 +10,7 @@ configurar_ssh() {
 # 3. Configurar la autenticación por clave pública
   mkdir -p /var/run/sshd
   ssh-keygen -A
-
+#4 Reinicar el servicio SSH para que se aplique las configuraciones
+  service ssh restart
 
 }

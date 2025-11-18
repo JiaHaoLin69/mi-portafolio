@@ -10,17 +10,11 @@ main(){
     # Gestión del sudo --> getsudo.sh
     # ...
     touch /root/logs/informe.log
-    newUser
-    reuser=$?
-
-    if [ "$resuser" -eq 0 ]
-    then
-        configurar_ssh
-    fi
-
+    reuser=newUser
     if [ "$resuser" -eq 0 ]
     then
         configurar_sudo
+        configurar_ssh
     fi
     # Encargada de mantener el contenedor en ejecución de Background
     

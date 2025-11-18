@@ -10,11 +10,20 @@ main(){
     # ...
     touch /root/logs/informe.log
     newUser
-    if [ "$?" -eq 0 ]
+    reuser=$?
+
+    if [ "$resuser" -eq 0 ]
     then
         configurar_ssh
     else
         echo "No se configura SSH porque no se ha creado el usuario." >> /root/logs/informe.log
+    fi
+
+    if [ "$resuser" -eq 0 ]
+    then
+        configurar_sudo
+    else
+        echo "No se configura SUDO porque no se ha creado el usuario." >> /root/logs/informe.log
     fi
     # Encargada de mantener el contenedor en ejecución de Background
     

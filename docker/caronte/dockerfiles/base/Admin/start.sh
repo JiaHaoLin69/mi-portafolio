@@ -10,8 +10,12 @@ main(){
     # ...
     touch /root/logs/informe.log
     newUser
-    # Gestión del ssh --> mainssh.sh
-    configurar_ssh
+    if [ "$?" -eq 0 ]
+    then
+        configurar_ssh
+    else
+        echo "No se configura SSH porque no se ha creado el usuario." >> /root/logs/informe.log
+    fi
     # Encargada de mantener el contenedor en ejecución de Background
     
     tail -f /dev/null

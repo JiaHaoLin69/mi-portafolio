@@ -13,8 +13,9 @@ main(){
     newUser
     if [ "$?" -eq 0 ]; then
         configurar_ssh
-        configurar_sudo
     fi
+
+    configurar_sudo
     # Encargada de mantener el contenedor en ejecución de Background
     
     tail -f /dev/null

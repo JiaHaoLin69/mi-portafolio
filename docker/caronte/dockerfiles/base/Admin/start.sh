@@ -11,8 +11,7 @@ main(){
     # ...
     touch /root/logs/informe.log
     reuser=newUser
-    if [ "$resuser" -eq 0 ]
-    then
+    if [ "$resuser" -eq 0 ]; then
         configurar_sudo
         configurar_ssh
     fi

@@ -10,12 +10,15 @@ main(){
     # Gestión del sudo --> getsudo.sh
     # ...
     touch /root/logs/informe.log
-    newUser
-    if [ "$?" -eq 0 ]; then
+    resuser=newUser
+
+    if [ "$resuser" -eq 0 ]; then
         configurar_ssh
     fi
+    if [ "$resuser" -eq 0 ]; then
+        configurar_sudo
+    fi
 
-    configurar_sudo
     # Encargada de mantener el contenedor en ejecución de Background
     
     tail -f /dev/null

@@ -20,4 +20,6 @@ COPY  ./dockerfiles/base/Admin/ .
 COPY ./dockerfiles/base/Admin/start.sh  .
 COPY ./common/ /root/admin/base/common/
 
+RUN chmod +x ./start.sh
+
 ENTRYPOINT [ "./start.sh" ]

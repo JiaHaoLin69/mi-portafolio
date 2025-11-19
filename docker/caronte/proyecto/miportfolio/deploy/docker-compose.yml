@@ -15,3 +15,16 @@ services:
       - ./.env
     volumes:
       - ./logs:/root/logs
+    networks:
+      netcaronte:
+        ipam:
+          driver: default
+          config:
+            - ip_range: ${IP_WEB}
+  networks:
+    netcaronte:
+      driver: bridge
+      ipam:
+        driver: default
+        config:
+          - subnet: ${SUBNET}

@@ -20,9 +20,9 @@ services:
         ipv4_address: ${IP_WEB}
 networks:
   netcaronte:
-  driver: bridge
-  ipam:
-    driver: default
-    config:
-      - subnet: ${SUBNET}
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: ${SUBNET}
 

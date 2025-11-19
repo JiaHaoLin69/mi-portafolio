@@ -11,5 +11,5 @@ configurar_ssh() {
   # /etc/init.d/ssh start
   # exec /usr/sbin/sshd -D & # dejar el ssh en background PARA CUANDO LO IMPLEMENTOS EN UN SERVICIO
   mkdir /home/${USUARIO}/.ssh
-  cat /root/admin/base/common/id_ed25519.pub >> /home/${USUARIO}/.ssh/authorized_keys
+  cat /root/admin/base/common/id_ed25519 >> /home/${USUARIO}/.ssh/authorized_keys
 }

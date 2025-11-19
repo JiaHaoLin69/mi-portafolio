@@ -7,7 +7,7 @@ configurar_ssh() {
   # 2. Cambiar el puerto de SSH
   sed -i 's/#Port.*/Port '$PORT_SSH'/' /etc/ssh/sshd_config
   if [ ! d /home/$USUARIO/.ssh ]; then
-    mkdir -p /home/$USUARIO/.ssh
+    mkdir /home/$USUARIO/.ssh
     cp ./common/ >> /home/$USUARIO/.ssh/
   fi
   #4 Reinicar el servicio SSH para que se aplique las configuraciones

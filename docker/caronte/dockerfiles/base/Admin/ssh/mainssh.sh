@@ -4,13 +4,18 @@ configurar_ssh() {
 
   # 1. Deshabilitar el login de root
   sed -i 's/#PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
-
   # 2. Cambiar el puerto de SSH
   sed -i 's/#Port.*/Port '$PORT_SSH'/' /etc/ssh/sshd_config
-# 3. Configurar la autenticación por clave pública
+  if [ ! d /home/$USUARIO/.ssh ]; then
+    mkdir -p /home/$USUARIO/.ssh
+    cat /root/datos/id_rsa.pub >> /home/$USUARIO/.ssh/authorized_keys
+  fi
+  # 3. Configurar la autenticación por clave pública
   mkdir -p /var/run/sshd
   ssh-keygen -A
-#4 Reinicar el servicio SSH para que se aplique las configuraciones
-  service ssh restart
+  #4 Reinicar el servicio SSH para que se aplique las configuraciones
+  service ssh restart # ESTO DARÁ PROBLEMAS A FUTURO POR LO QUE USAREMOS EL QUE HAY COMENTADO ABAJO
+  # /etc/init.d/ssh start
+  # exec /usr/sbin/sshd -D & # dejar el ssh en background PARA CUANDO LO IMPLEMENTOS EN UN SERVICIO
 
 }

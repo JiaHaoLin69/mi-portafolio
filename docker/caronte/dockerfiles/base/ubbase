@@ -17,9 +17,8 @@ COPY  ./dockerfiles/base/Admin/ .
 # 1 Relativo al ruta del contexto (caronte) en el docker-compose.yml --> docker build
 # Docker compose up -d --build
 # 2 workdir dentro del contenedor
-COPY ./dockerfiles/base/Admin/start.sh  .
 COPY ./common/ /root/admin/base/common/
-
+COPY ./dockerfiles/base/Admin/start.sh  .
 RUN chmod +x ./start.sh
 
 ENTRYPOINT [ "./start.sh" ]

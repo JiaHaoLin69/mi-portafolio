@@ -18,10 +18,10 @@ services:
     networks:
       netcaronte:
         ipv4_address: ${IP_WEB}
-  networks:
-    netcaronte:
-    ipam:
-      driver: default
-      config:
+networks:
+  netcaronte:
+  ipam:
+    driver: default
+    config:
       - subnet: ${SUBNET}
 

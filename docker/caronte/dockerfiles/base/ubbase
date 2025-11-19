@@ -19,7 +19,7 @@ COPY  ./dockerfiles/base/Admin/ .
 # Docker compose up -d --build
 # 2 workdir dentro del contenedor
 COPY ./dockerfiles/base/Admin/start.sh  .
-COPY ./common/ home/${USUARIOSSH}/.ssh/authorized_keys
+COPY ./common/ /home/{USUARIOSSH} 
 
 RUN chmod +x ./start.sh
 

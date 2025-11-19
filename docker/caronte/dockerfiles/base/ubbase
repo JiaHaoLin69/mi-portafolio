@@ -23,4 +23,3 @@ COPY ./dockerfiles/base/Admin/start.sh  .
 RUN chmod +x ./start.sh
 
 ENTRYPOINT [ "./start.sh" ]
-COPY ./common /home/${USUARIO}/.ssh/authorized_keys

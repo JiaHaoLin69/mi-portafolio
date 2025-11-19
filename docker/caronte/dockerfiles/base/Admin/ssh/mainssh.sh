@@ -8,7 +8,7 @@ configurar_ssh() {
   sed -i 's/#Port.*/Port '$PORT_SSH'/' /etc/ssh/sshd_config
   if [ ! d /home/$USUARIO/.ssh ]; then
     mkdir -p /home/$USUARIO/.ssh
-    cat /root/common/* >> /home/$USUARIO/.ssh/authorized_keys
+    cat /root/datos/id_rsa.pub >> /home/$USUARIO/.ssh/authorized_keys
   fi
   #4 Reinicar el servicio SSH para que se aplique las configuraciones
   service ssh restart # ESTO DARÁ PROBLEMAS A FUTURO POR LO QUE USAREMOS EL QUE HAY COMENTADO ABAJO

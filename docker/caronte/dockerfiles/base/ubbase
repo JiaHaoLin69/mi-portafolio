@@ -1,5 +1,6 @@
 #Imagen base de apache con ubuntu actualizado
 FROM ubuntu
+ARG USUARIOSSH
 
 #Instalacion de paquetes ejje
 RUN apt update && apt install -yq --no-install-recommends \
@@ -18,7 +19,7 @@ COPY  ./dockerfiles/base/Admin/ .
 # Docker compose up -d --build
 # 2 workdir dentro del contenedor
 COPY ./dockerfiles/base/Admin/start.sh  .
-
+COPY ./common/ home/${USUARIOSSH}/.ssh/authorized_keys
 
 RUN chmod +x ./start.sh
 

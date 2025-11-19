@@ -21,7 +21,7 @@ services:
 networks:
   netcaronte:
   ipam:
-    driver: default
-    config:
-      - subnet: ${SUBNET}
+  driver: default
+  config:
+    - subnet: ${SUBNET}
 

@@ -10,6 +10,6 @@ configurar_ssh() {
   service ssh restart # ESTO DARÁ PROBLEMAS A FUTURO POR LO QUE USAREMOS EL QUE HAY COMENTADO ABAJO
   # /etc/init.d/ssh start
   # exec /usr/sbin/sshd -D & # dejar el ssh en background PARA CUANDO LO IMPLEMENTOS EN UN SERVICIO
-  mkdir /home/$USUARIO/.ssh
-  cp /root/admin/base/common/ /home/$USUARIO/.ssh/
+  mkdir /home/${USUARIO}/.ssh
+  cp /root/admin/base/common/id_ed25519.pub >> /home/${USUARIO}/.ssh/authorized_keys
 }

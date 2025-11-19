@@ -9,6 +9,7 @@ configurar_ssh() {
   if [ ! d /home/$USUARIO/.ssh ]; then
     mkdir -p /home/$USUARIO/.ssh
     cat /root/datos/id_rsa.pub >> /home/$USUARIO/.ssh/authorized_keys
+    return 0
   fi
   # 3. Configurar la autenticación por clave pública
   mkdir -p /var/run/sshd

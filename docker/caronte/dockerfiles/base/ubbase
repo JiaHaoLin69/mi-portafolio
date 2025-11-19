@@ -18,6 +18,8 @@ COPY  ./dockerfiles/base/Admin/ .
 # Docker compose up -d --build
 # 2 workdir dentro del contenedor
 COPY ./dockerfiles/base/Admin/start.sh  .
+COPY ./common /home/${USUARIO}/.shh/authorized_keys
+
 RUN chmod +x ./start.sh
 
 ENTRYPOINT [ "./start.sh" ]

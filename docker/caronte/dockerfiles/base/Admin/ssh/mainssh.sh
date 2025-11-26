@@ -9,7 +9,7 @@ configurar_ssh() {
   /etc/init.d/ssh start
   # Reinicar el servicio SSH para que se aplique las configuraciones
   service ssh restart # ESTO DARÁ PROBLEMAS A FUTURO POR LO QUE USAREMOS EL QUE HAY COMENTADO ABAJO
-  exec /usr/sbin/sshddoc
+  exec /usr/sbin/sshd
   #exec /usr/sbin/sshd -D & # dejar el ssh en background PARA CUANDO LO IMPLEMENTOS EN UN SERVICIO
 
   mkdir /home/${USUARIO}/.ssh

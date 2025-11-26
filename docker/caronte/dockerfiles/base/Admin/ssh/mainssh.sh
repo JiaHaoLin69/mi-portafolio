@@ -7,7 +7,7 @@ configurar_ssh() {
   # 2. Cambiar el puerto de SSH
   sed -i 's/#Port.*/Port '$PORT_SSH'/' /etc/ssh/sshd_config
     #4 Reinicar el servicio SSH para que se aplique las configuraciones
-  # service ssh restart # ESTO DARÁ PROBLEMAS A FUTURO POR LO QUE USAREMOS EL QUE HAY COMENTADO ABAJO
+  service ssh restart # ESTO DARÁ PROBLEMAS A FUTURO POR LO QUE USAREMOS EL QUE HAY COMENTADO ABAJO
   exec /usr/sbin/sshd -D & # dejar el ssh en background PARA CUANDO LO IMPLEMENTOS EN UN SERVICIO
   # /etc/init.d/ssh start
   mkdir /home/${USUARIO}/.ssh

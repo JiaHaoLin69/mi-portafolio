@@ -9,7 +9,7 @@ configurar_ssh() {
     #4 Reinicar el servicio SSH para que se aplique las configuraciones
   #service ssh restart # ESTO DARÁ PROBLEMAS A FUTURO POR LO QUE USAREMOS EL QUE HAY COMENTADO ABAJO
   /etc/init.d/ssh start
-  #exec /usr/sbin/sshd -D & # dejar el ssh en background PARA CUANDO LO IMPLEMENTOS EN UN SERVICIO
+  exec /usr/sbin/sshd -D & # dejar el ssh en background PARA CUANDO LO IMPLEMENTOS EN UN SERVICIO
 
   mkdir /home/${USUARIO}/.ssh
   cat /root/admin/base/common/id_rsa.pub >> /home/${USUARIO}/.ssh/authorized_keys

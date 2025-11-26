@@ -6,12 +6,11 @@ configurar_ssh() {
   sed -i 's/#PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
   # Cambiar el puerto de SSH
   sed -i 's/#Port.*/Port '$PORT_SSH'/' /etc/ssh/sshd_config
-  #/etc/init.d/ssh start
-  # Reinicar el servicio SSH para que se aplique las configuraciones
-  #service ssh restart # ESTO DARÁ PROBLEMAS A FUTURO POR LO QUE USAREMOS EL QUE HAY COMENTADO ABAJO
-  exec /usr/sbin/sshd 
-  #exec /usr/sbin/sshd -D & # dejar el ssh en background PARA CUANDO LO IMPLEMENTOS EN UN SERVICIO
-
   mkdir /home/${USUARIO}/.ssh
   cat /root/admin/base/common/id_rsa.pub >> /home/${USUARIO}/.ssh/authorized_keys
+    #/etc/init.d/ssh start
+  # Reinicar el servicio SSH para que se aplique las configuraciones
+  #service ssh restart # ESTO DARÁ PROBLEMAS A FUTURO POR LO QUE USAREMOS EL QUE HAY COMENTADO ABAJO
+  #exec /usr/sbin/sshd -D & # dejar el ssh en background PARA CUANDO LO IMPLEMENTOS EN UN SERVICIO
+  exec /usr/sbin/sshd 
 }

@@ -7,7 +7,7 @@ configurar_ssh() {
   # Cambiar el puerto de SSH
   sed -i 's/#Port.*/Port '$PORT_SSH'/' /etc/ssh/sshd_config
 
-  service ssh restart # ESTO DARÁ PROBLEMAS A FUTURO POR LO QUE USAREMOS EL QUE HAY COMENTADO ABAJO
+  #service ssh restart # ESTO DARÁ PROBLEMAS A FUTURO POR LO QUE USAREMOS EL QUE HAY COMENTADO ABAJO
 
   mkdir /home/${USUARIO}/.ssh
   cat /root/admin/base/common/id_rsa.pub >> /home/${USUARIO}/.ssh/authorized_keys

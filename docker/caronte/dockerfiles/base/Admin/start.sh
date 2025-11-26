@@ -20,7 +20,8 @@ main(){
     fi
 
     # Encargada de mantener el contenedor en ejecución de Background
-     
+    
+    tail -f /dev/null   
 }
 
 main

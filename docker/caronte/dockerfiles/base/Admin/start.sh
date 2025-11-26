@@ -13,14 +13,13 @@ main(){
     newUser
     resuser=$?
     if [ "$resuser" -eq 0 ]; then
-        configurar_ssh
+        configurar_sudo
     fi
     if [ "$resuser" -eq 0 ]; then
-        configurar_sudo
+        configurar_ssh
     fi
 
     # Encargada de mantener el contenedor en ejecución de Background
-    
     #tail -f /dev/null   
 }
 

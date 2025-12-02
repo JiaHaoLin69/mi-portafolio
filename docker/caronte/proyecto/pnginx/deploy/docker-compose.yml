@@ -1,19 +1,18 @@
 services:
   web:
-    build: 
+    build:
       context: ${CONTEXTO}
-      #args: #variables en dockerfile para la construcción de la imagen
       dockerfile: ./dockerfiles/sweb/nginx/Dockerfile
     container_name: ${NOMBRE}
     ports:
-      - "${PORT_WEB}:80"
+      - "${PORT_WEB}:80"       # <--- Con guion
     env_file:
-      ./.env
+      - ./.env                 # <--- Con guion (recomendado)
     volumes:
-      - ./logs:/root/logs
+      - ./logs:/root/logs      # <--- Con guion
     networks:
-     netcarontewebnginx:
-         ipv4_address: ${IP}
+      netcarontewebnginx:
+        ipv4_address: ${IP}
 
 networks:
   netcarontewebnginx:

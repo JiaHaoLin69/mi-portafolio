@@ -6,6 +6,7 @@ services:
       args: #Variables de DFILE para la construcción de las imagenes 
         - USUARIO=jiahao
     container_name: ${CONTAINER_NAME}
+    image: jiahaolin69/ubbase
     # environment:
     #   - USUARIO=jiahao
     #   - PASSWORD=1234

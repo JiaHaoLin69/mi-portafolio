@@ -1,0 +1,23 @@
+ARG AUTOR
+FROM ${AUTOR}/ubbase
+
+ARG USUARIO
+ARG CONTEXT
+ARG PROYECTO
+ARG TZ
+
+USER root
+RUN apt update && apt install -yq --no-install-recommends \
+    nginx
+
+RUN chown -R www-data /var/www/html
+RUN chmod -R 755 /var/www/html
+
+# instalo nginx/apache --> usuario www-data
+# el propietario de /var/www/html debe de ser www-data
+RUN mkdir -p /var/log/nginx
+
+USER root
+RUN mkdir /root/admin/nginx
+
+CMD ["nginx", "-g", "daemon off;"]

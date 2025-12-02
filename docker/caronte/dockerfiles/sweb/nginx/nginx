@@ -1,4 +1,4 @@
-FROM jiahaolin69/ubbase
+FROM jiahaolin69/ubbase:lastest
 
 USER root
 RUN apt update && apt install -yq --no-install-recommends \

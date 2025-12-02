@@ -3,7 +3,6 @@ services:
     build: 
       context: ${CONTEXTO}
       #args: #variables en dockerfile para la construcción de la imagen
-      #  - USUARIO=pedro
       dockerfile: ./dockerfiles/sweb/nginx/Dockerfile
     container_name: ${NOMBRE}
     ports:
@@ -13,8 +12,9 @@ services:
     volumes:
       ./logs:/root/logs
     networks:
-    netcarontewebnginx:
-      ipv4_address: ${IP}
+     netcarontewebnginx:
+         ipv4_address: ${IP}
+
 networks:
   netcarontewebnginx:
     ipam:

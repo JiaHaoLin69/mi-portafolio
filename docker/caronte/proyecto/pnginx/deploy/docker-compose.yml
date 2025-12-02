@@ -6,11 +6,11 @@ services:
       dockerfile: ./dockerfiles/sweb/nginx/Dockerfile
     container_name: ${NOMBRE}
     ports:
-      "${PORT_WEB}:80"
+      - "${PORT_WEB}:80"
     env_file:
       ./.env
     volumes:
-      ./logs:/root/logs
+      - ./logs:/root/logs
     networks:
      netcarontewebnginx:
          ipv4_address: ${IP}

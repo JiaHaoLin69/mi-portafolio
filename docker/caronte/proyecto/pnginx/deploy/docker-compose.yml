@@ -5,18 +5,18 @@ services:
       dockerfile: ./dockerfiles/sweb/nginx/Dockerfile
     container_name: ${NOMBRE}
     ports:
-      - "${PORT_WEB}:80"       # <--- Con guion
+      - "${PORT_WEB}:80"     
     env_file:
-      - ./.env                 # <--- Con guion (recomendado)
+      - ./.env                
     volumes:
-      - ./logs:/root/logs      # <--- Con guion
+      - ./logs:/root/logs      
     networks:
       netcarontewebnginx:
         ipv4_address: ${IP}
-
 networks:
   netcarontewebnginx:
+    driver: bridge
     ipam:
       driver: default
-      config:        
+      config:
         - subnet: ${SUBNET}

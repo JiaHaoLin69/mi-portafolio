@@ -23,6 +23,7 @@ checkhome(){
 }
 
 newUser(){
+    touch /root/logs/informe.log
     checkusuario
     if [ "$?" -eq 0 ] # No existe el usuario y $? Recoge el valor de retorno del ultimo comando ejecutado
     then

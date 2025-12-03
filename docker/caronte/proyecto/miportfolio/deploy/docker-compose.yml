@@ -1,8 +1,8 @@
 services:
-  portfolio:
-      image: jiahaolin69/nginx
-      container_name: ctportfolio
-      ports:
-        - "${PORT_WEB}:80"
-      volumes:
-        - ../src:/var/www/html   
+  web:
+    build:
+      context: ${CONTEXTO}
+      dockerfile: ./dockerfiles/miportfolio/miportfolio
+    container_name: ctportfolio
+    ports:
+      - "${PORT_WEB}:80" 

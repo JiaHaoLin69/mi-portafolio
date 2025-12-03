@@ -1,3 +1,4 @@
+#!/bin/bash
 load_entrypoint_base(){
     bash /root/admin/base/start.sh
 }

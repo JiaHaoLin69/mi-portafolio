@@ -2,7 +2,7 @@ services:
   web:
     build:
       context: ${CONTEXTO}
-      dockerfile: ./dockerfiles/miportfolio/miportfolio
+      dockerfile: ./dockerfiles/miportfolio/miporfolio
     container_name: ctportfolio
     ports:
       - "${PORT_WEB}:80" 

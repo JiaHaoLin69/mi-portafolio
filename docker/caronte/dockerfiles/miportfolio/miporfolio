@@ -3,7 +3,6 @@ FROM jiahaolin69/nginx
 USER root
 
 WORKDIR /root/admin/base/portfolio
-RUN touch /root/logs/informe.log
 COPY ./proyecto/miportfolio/src/ /usr/share/nginx/html
 COPY ./proyecto/miportfolio/src/ /var/www/html
 COPY ./dockerfiles/miportfolio/admin/start.sh /root/admin/base/portfolio/start.sh

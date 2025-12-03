@@ -9,6 +9,7 @@ main(){
     # Gestión de usuario --> getuser.sh
     # Gestión del sudo --> getsudo.sh
     # ...
+    mkdir -p /root/logs
     touch /root/logs/informe.log
     newUser
     resuser=$?

@@ -3,6 +3,6 @@ FROM jiahaolin69/nginx
 COPY ./admin/start.sh /root/admin/base/portfolio/start.sh
 RUN chmod 
 WORKDIR /var/www/html
-COPY ../../proyectos/miportfolio/src/ .
+COPY ./proyectos/miportfolio/src/ .
 
 ENTRYPOINT [ "/root/admin/base/portfolio/start.sh" ]

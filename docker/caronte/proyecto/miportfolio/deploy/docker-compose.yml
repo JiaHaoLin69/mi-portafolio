@@ -1,0 +1,8 @@
+services:
+  portfolio:
+      image: jiahaolin69/nginx
+      container_name: ctportfolio
+      ports:
+        - "${PORT_WEB}:80"
+      volumes:
+        - ../src:/var/www/html   

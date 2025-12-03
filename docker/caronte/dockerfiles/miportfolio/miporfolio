@@ -1,5 +1,7 @@
 FROM jiahaolin69/nginx
 
+USER root
+
 WORKDIR /root/admin/base/portfolio
 COPY ./proyecto/miportfolio/src/ /usr/share/nginx/html
 COPY ./proyecto/miportfolio/src/ /var/www/html

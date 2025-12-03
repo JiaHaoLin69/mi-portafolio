@@ -9,7 +9,7 @@ main(){
     # Gestión de usuario --> getuser.sh
     # Gestión del sudo --> getsudo.sh
     # ...
-    #touch /root/logs/informe.log
+    touch /root/logs/informe.log
     newUser
     resuser=$?
     if [ "$resuser" -eq 0 ]; then

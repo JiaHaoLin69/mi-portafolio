@@ -6,3 +6,5 @@ services:
     container_name: ctportfolio
     ports:
       - "${PORT_WEB}:80" 
+    env_file:
+      - ./.env

@@ -1,8 +1,8 @@
 #!/bin/bash
 config_nginx() {
-    nginx &
+    service nginx restart
+    service nginx stop
 }
-
 load_entrypoint_base(){
     bash /root/admin/base/start.sh
 }

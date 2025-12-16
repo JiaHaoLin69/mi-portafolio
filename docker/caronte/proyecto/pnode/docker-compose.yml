@@ -1,0 +1,24 @@
+services:
+  web:
+    build:
+      context: ${CONTEXTO}
+      dockerfile: ./dockerfiles/node/node
+    container_name: ${NOMBRE}
+    ports:
+      - "8888:8080"   
+    env_file:
+      - ./.env
+    image: jiahaolin69/nodejsclase
+    volumes:
+      - ./logs:/root/logs      
+      - ../pmegacrossover/Web-Practica1-JiaHao:/root/admin/node/proyectos/pmegacrossover
+    networks:
+      netmegacrossovernode:
+        ipv4_address: ${IP}
+networks:
+  netmegacrossovernode:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: ${SUBNET}

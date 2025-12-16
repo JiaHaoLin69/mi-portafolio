@@ -1,4 +1,4 @@
-FROM jiahaolin69/nginx
+FROM jiahaolin69/nginxclase
 
 RUN apt install -yq --no-install-recommends \
     nodejs \

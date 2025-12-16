@@ -1,5 +1,5 @@
 # Usamos tu imagen base personalizada
-FROM jiahaolin69/ubseguridadclase
+FROM jiahaolin69/ubbaseclase
 
 # Instalamos herramientas: 
 # nmap (escanear), xsltproc (reportes HTML), iproute2 (detectar red)

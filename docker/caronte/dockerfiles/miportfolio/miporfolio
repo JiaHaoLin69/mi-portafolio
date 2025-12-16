@@ -6,7 +6,7 @@ USER root
 WORKDIR /root/admin/base/portfolio
 COPY ${PROYECTO} /usr/share/nginx/html
 COPY ${PROYECTO} /var/www/html
-COPY ./dockerfiles/miportfolio/admin/start.sh /root/admin/base/portfolio/start.sh
+COPY ${SCRIPT} /root/admin/base/portfolio/start.sh
 RUN chmod +x /root/admin/base/portfolio/start.sh
 
 ENTRYPOINT [ "/root/admin/base/portfolio/start.sh" ]

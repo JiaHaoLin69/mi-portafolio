@@ -1,0 +1,23 @@
+services:
+  web:
+    build:
+      context: ${CONTEXTO}
+      dockerfile: ./dockerfiles/pokeapi/pokeapi
+    container_name: pokeapiclase
+    ports:
+      - "80:80"   
+    env_file:
+      - ./.env
+    image: jiahaolin69/pokeapi
+    volumes:
+      - ./logs:/root/logs      
+    networks:
+      netnodeclase:
+        ipv4_address: ${IP}
+networks:
+  netnodeclase:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: ${SUBNET}

@@ -1,0 +1,9 @@
+FROM jiahaolin69/nodejsclase
+
+
+
+COPY ./dockerfiles/pokeapi/admin/start.sh .
+RUN chmod +x ./start.sh
+
+
+ENTRYPOINT [./start.sh]

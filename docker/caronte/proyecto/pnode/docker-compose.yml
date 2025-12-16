@@ -3,7 +3,7 @@ services:
     build:
       context: ${CONTEXTO}
       dockerfile: ./dockerfiles/node/node
-    container_name: ${NOMBRE}
+    container_name: nodeclase
     ports:
       - "8888:8080"   
     env_file:

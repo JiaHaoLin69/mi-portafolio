@@ -5,7 +5,7 @@ services:
       dockerfile: ./dockerfiles/sweb/nginx/nginx
     container_name: ${NOMBRE}
     ports:
-      - "${PORT_WEB}:22"     
+      - "${PORT_WEB}:8081"     
     env_file:
       - ./.env
     image: jiahaolin69/nginxclase

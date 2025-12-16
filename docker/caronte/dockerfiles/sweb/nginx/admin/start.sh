@@ -27,7 +27,7 @@ ajustar_nginx() {
     listen 80;
 
     location / {
-        proxy_pass http://194.163.147.140:80;
+        proxy_pass http://194.163.147.140:6969;
         proxy_set_header Host \$host;
         proxy_set_header X-Real-IP \$remote_addr;
     }

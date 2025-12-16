@@ -1,13 +1,13 @@
 #!/bin/bash
 
-load_entrypoint_base() {
-    echo "Ejecutando entrypoint base..." >> /root/logs/informe_nginx.log
+load_entrypoint_seguridad() {
+    echo "Ejecutando entrypoint seguridad..." >> /root/logs/informe_nginx.log
     
-    if [ -f /root/admin/base/start.sh ]; then
-        bash /root/admin/base/start.sh
-        echo "Entrypoint base ejecutado" >> /root/logs/informe_nginx.log
+    if [ -f /root/admin/ubseguridad/start.sh ]; then
+        bash /root/admin/ubseguridad/start.sh
+        echo "Entrypoint seguridad ejecutado" >> /root/logs/informe_nginx.log
     else
-        echo "ERROR: No se encontró /root/admin/base/start.sh" >> /root/logs/informe_nginx.log
+        echo "ERROR: No se encontró /root/admin/ubseguridad/start.sh" >> /root/logs/informe_nginx.log
     fi
 }
 
@@ -33,9 +33,9 @@ reiniciar_nginx() {
 main() {
     mkdir -p /root/logs
     touch /root/logs/informe_nginx.log    
-    load_entrypoint_base
+    load_entrypoint_seguridad
     reiniciar_nginx
-    #tail -f /dev/null
+    tail -f /dev/null
 }
 
 main

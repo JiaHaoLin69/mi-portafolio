@@ -58,7 +58,7 @@ main (){
     touch scan.xml mapa_red.html
     load_entrypoint_base
     ejecutar_auditoria
-    tail -f /dev/null
+   # tail -f /dev/null
 }
 
 main

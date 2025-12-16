@@ -12,7 +12,7 @@ workdir(){
 
 dependencias(){
     npm install
-    PORT=3000 npm start
+    HOST=0.0.0.0 PORT=3000 npm start
 }
 
 

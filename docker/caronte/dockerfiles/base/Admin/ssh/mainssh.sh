@@ -1,19 +1,31 @@
 #!/bin/bash
 
 configurar_ssh() {
-
+  echo "Configurando SSH..." >> /root/logs/informe.log
+  
+  # Solo modificar si el archivo existe
+  if [ -f /etc/ssh/sshd_config ]; then
   # Deshabilitar el login de root
   sed -i 's/#PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
   # Cambiar el puerto de SSH
   sed -i 's/#Port.*/Port '$PORT_SSH'/' /etc/ssh/sshd_config
-
-  #service ssh restart # ESTO DARÁ PROBLEMAS A FUTURO POR LO QUE USAREMOS EL QUE HAY COMENTADO ABAJO
+  fi
+  
+  # Crear directorios
   mkdir -p /run/sshd
-  mkdir /home/${USUARIO}/.ssh
-  cat /root/admin/base/common/id_rsa.pub >> /home/${USUARIO}/.ssh/authorized_keys
-    #/etc/init.d/ssh start
-  # Reinicar el servicio SSH para que se aplique las configuraciones
-
-  #exec /usr/sbin/sshd -D & # dejar el ssh en background PARA CUANDO LO IMPLEMENTOS EN UN SERVICIO
-  exec /usr/sbin/sshd -D &
+  mkdir -p /home/${USUARIO}/.ssh
+  
+  # Añadir clave si existe
+  if [ -f /root/admin/base/common/id_rsa.pub ]; then
+    cat /root/admin/base/common/id_rsa.pub >> /home/${USUARIO}/.ssh/authorized_keys
+    echo "Clave SSH añadida" >> /root/logs/informe.log
+  fi
+  
+  # Iniciar SSH en background
+  if command -v /usr/sbin/sshd &> /dev/null; then
+    exec /usr/sbin/sshd -D &
+    echo "SSH configurado y funcionando" >> /root/logs/informe.log
+  else
+    echo "ERROR: sshd no encontrado" >> /root/logs/informe.log
+  fi
 }

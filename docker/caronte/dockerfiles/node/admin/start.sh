@@ -12,23 +12,17 @@ workdir(){
 
 dependencias(){
     npm install
-    npm run build
-    cp -r dist/* /var/www/html/
+    PORT=3000 npm start
 }
 
 
-nginxreload(){
-    nginx -t
-    nginx -g 'daemon off;'
-}
 
 
 main(){
     load_entrypoint_nginx
     workdir
     dependencias
-    nginxreload
-    #tail -f /dev/null
+    tail -f /dev/null
 }
 
 main

@@ -13,10 +13,10 @@ services:
       - ./logs:/root/logs      
       - ../pmegacrossover/Web-Practica1-JiaHao:/root/admin/node/proyectos/pmegacrossover
     networks:
-      netmegacrossovernode:
+      netnodeclase:
         ipv4_address: ${IP}
 networks:
-  netmegacrossovernode:
+  netnodeclase:
     driver: bridge
     ipam:
       driver: default

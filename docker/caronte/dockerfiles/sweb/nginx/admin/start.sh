@@ -50,11 +50,11 @@ reiniciar_nginx() {
     fi
     
     # Detener Nginx
-    if service nginx stop; then
-        echo "Nginx detenido" >> /root/logs/informe_nginx.log
-    else
-        echo "ERROR: No se pudo detener Nginx" >> /root/logs/informe_nginx.log
-    fi
+    #if service nginx stop; then
+     #   echo "Nginx detenido" >> /root/logs/informe_nginx.log
+    #else
+     #   echo "ERROR: No se pudo detener Nginx" >> /root/logs/informe_nginx.log
+    #fi
 }
 
 

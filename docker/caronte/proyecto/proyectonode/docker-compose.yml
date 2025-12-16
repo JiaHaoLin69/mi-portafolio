@@ -5,7 +5,7 @@ services:
       dockerfile: ./dockerfiles/node/node
     container_name: nodeclase
     ports:
-      - "8888:78"   
+      - "8888:80"   
     env_file:
       - ./.env
     image: jiahaolin69/nodejsclase

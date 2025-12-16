@@ -7,7 +7,7 @@ RUN apt install -yq --no-install-recommends \
 RUN mkdir -p /root/admin/node
 RUN mkdir -p /root/admin/node/proyectos/pokeapi
 WORKDIR /root/admin/node
-COPY ./proyectos/pmegacrossover/practica_navyhookPOKEAPI /root/admin/node/proyectos/pokeapi
+COPY ./proyecto/practica_navyhookPOKEAPI /root/admin/node/proyectos/pokeapi
 
 COPY ./dockerfiles/node/admin/start.sh .
 RUN chmod +x /root/admin/node/start.sh

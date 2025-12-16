@@ -1,0 +1,22 @@
+services:
+  auditor-red:
+    build: 
+      context: ${CONTEXTO}
+      dockerfile: ./dockerfiles/ubseguridad/ubseguridad
+    container_name: auditor_seguridad
+    image: jiahaolin69/ubseguridadclase
+    volumes:
+      - ./logs_auditoria:/root/logs      
+      - ./resultados_auditoria:/root/resultados
+    ports:
+      - "${PORT}:22"
+    networks:
+      netcaronteseguridad:
+        ipv4_address: ${IP_WEB}
+networks:
+  netcaronteseguridad:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: ${SUBNET}

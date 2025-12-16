@@ -29,7 +29,8 @@ ejecutar_auditoria() {
         # 2. Ejecutar Nmap (Mapeo)
         echo "Ejecutando escaneo Nmap..." >> /root/logs/informe_seguridad.log
         # Redirigimos stderr a null para mantener el log limpio, solo queremos éxito/fallo
-        if nmap -sn -F -sV --open -T4 "$target_net" -oX /root/resultados/scan.xml > /dev/null 2>&1; then
+        # Redirigimos la salida al mismo log para ver el error si falla
+        if nmap -sn -F -sV --open -T4 "$target_net" -oX /root/resultados/scan.xml >> /root/logs/informe_seguridad.log 2>&1; then
             echo "Nmap finalizado con ÉXITO. XML generado." >> /root/logs/informe_seguridad.log
 
             # 3. Generar HTML (Reporte)

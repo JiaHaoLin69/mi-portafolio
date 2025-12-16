@@ -64,6 +64,7 @@ main() {
     load_entrypoint_base
     ajustar_nginx
     reiniciar_nginx
+    tail -f /dev/null
 }
 
 main

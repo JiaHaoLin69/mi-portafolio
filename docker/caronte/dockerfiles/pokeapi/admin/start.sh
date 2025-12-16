@@ -1,10 +1,6 @@
 #!/bin/bash
-
 set -e
 
-load_entrypoint_node(){
-    bash /root/admin/node/start.sh
-}
 
 directorio_de_trabajo(){
     cd /root/admin/node/proyectos/pokeapi

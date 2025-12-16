@@ -5,7 +5,8 @@ services:
       dockerfile: ./dockerfiles/pokeapi/pokeapi
     container_name: pokeapiclase
     ports:
-      - "8080:8080"   
+      - "3000:3000"   
+      - "8080:80"
     env_file:
       - ./.env
     image: jiahaolin69/pokeapi

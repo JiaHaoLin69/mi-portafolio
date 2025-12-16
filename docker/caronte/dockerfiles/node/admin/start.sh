@@ -22,7 +22,7 @@ main(){
     load_entrypoint_nginx
     workdir
     dependencias
-    tail -f /dev/null
+    #tail -f /dev/null
 }
 
 main

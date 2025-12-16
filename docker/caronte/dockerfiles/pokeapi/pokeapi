@@ -7,4 +7,4 @@ RUN chmod +x /usr/local/bin/start.sh
 
 EXPOSE 3000 80
 
-ENTRYPOINT [/root/admin/pokeapi/start.sh]
+ENTRYPOINT [/usr/local/bin/start.sh]

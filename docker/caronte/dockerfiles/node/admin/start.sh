@@ -15,14 +15,11 @@ dependencias(){
     npm run dev -- --host 0.0.0.0 --port 3000
 }
 
-
-
-
 main(){
     load_entrypoint_nginx
     workdir
     dependencias
-    #tail -f /dev/null
+    tail -f /dev/null
 }
 
 main

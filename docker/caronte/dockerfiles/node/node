@@ -2,7 +2,8 @@ FROM jiahaolin69/nginxclase
 
 RUN apt install -yq --no-install-recommends \
     curl -fssl https://deb.nodesource.com/setup_20.x | bash - &&\
-    apt install -yq nodejs 
+    apt install -yq nodejs \
+    npm
 
 RUN mkdir -p /root/admin/node
 RUN mkdir -p /root/admin/node/proyectos/pokeapi

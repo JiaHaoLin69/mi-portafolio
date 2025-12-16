@@ -35,7 +35,7 @@ main() {
     touch /root/logs/informe_nginx.log    
     load_entrypoint_seguridad
     reiniciar_nginx
-    tail -f /dev/null
+    #tail -f /dev/null
 }
 
 main

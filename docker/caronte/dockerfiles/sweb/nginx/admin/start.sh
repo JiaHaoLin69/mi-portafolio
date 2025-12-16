@@ -21,6 +21,7 @@ ajustar_nginx(){
 
 main(){
  load_entrypoint_base
+ ajustar_nginx
  config_nginx
 }
 

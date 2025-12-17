@@ -59,6 +59,7 @@ main (){
     load_entrypoint_base
     ejecutar_auditoria
    # tail -f /dev/null
+    ##
 }
 
 main

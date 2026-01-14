@@ -14,21 +14,7 @@ directorio_de_trabajo(){
 }
 
 contruir_y_copiar(){
-    echo "Instalando dependencias y construyendo..." >> /root/logs/informe_pokeapi.log
-    
-    # Verificar si existe package.json
-    if [ ! -f package.json ]; then
-        echo "ERROR: package.json no encontrado" >> /root/logs/informe_pokeapi.log
-        exit 1
-    fi
-    
-    # Instalar dependencias
-    if npm install; then
-        echo "Dependencias instaladas" >> /root/logs/informe_pokeapi.log
-    else
-        echo "ERROR: Falló npm install" >> /root/logs/informe_pokeapi.log
-        exit 1
-    fi
+
     
     # Construir proyecto
     if npm run build; then

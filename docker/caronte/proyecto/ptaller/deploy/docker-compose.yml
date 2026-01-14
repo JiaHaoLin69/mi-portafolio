@@ -2,7 +2,7 @@ services:
   webtaller:
     build: 
       context: ..
-      dockerfile: ./dockerfile
+      dockerfile: ./deploy/dockerfile
       args:
         - PROYECTO=${PROYECTO}
         - USUARIO=${USUARIO}

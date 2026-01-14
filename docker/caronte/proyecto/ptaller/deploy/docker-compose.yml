@@ -1,7 +1,7 @@
 services:
   webtaller:
     build: 
-      context: .
+      context: ./
       dockerfile: ./dockerfile
     container_name: web_taller
     args:

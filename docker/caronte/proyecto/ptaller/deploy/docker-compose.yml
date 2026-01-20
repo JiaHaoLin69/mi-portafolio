@@ -1,4 +1,5 @@
 services:
+  web-taller:
     build: 
       context: ..
       dockerfile: ./deploy/dockerfile

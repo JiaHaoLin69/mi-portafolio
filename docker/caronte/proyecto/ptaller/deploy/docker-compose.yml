@@ -1,5 +1,4 @@
 services:
-  webtaller:
     build: 
       context: ..
       dockerfile: ./deploy/dockerfile
@@ -8,7 +7,6 @@ services:
         - USUARIO=${USUARIO}
         - TIPO=${TIPO}
     container_name: web_taller
-
     image: jiahaolin69/webtallerclase
     hostname: web_taller
     env_file:

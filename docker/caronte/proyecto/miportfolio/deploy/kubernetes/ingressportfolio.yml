@@ -4,10 +4,14 @@ metadata:
   name: webtaller-ingress
   namespace: proyectoportfolio
   annotations:
+    kubernetes.io/ingress.class: nginx
+    # Esta línea activa a cert-manager:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - host: portfolio.megacrossover.es
+    secretName: portfolio-tls-prod
     http:
       paths:
       - path: /

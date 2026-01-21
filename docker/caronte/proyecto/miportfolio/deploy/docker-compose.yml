@@ -5,7 +5,9 @@ services:
       dockerfile: ./dockerfiles/miportfolio/miporfolio
       args:
         - PROYECTO=./proyecto/miportfolio/src/ #${PROYECTO}
+        - SCRIPT=./dockerfiles/miportfolio/admin/start.sh #${SCRIPT}
     container_name: ctportfolio
+    image: jiahaolin69/miportfolio
     ports:
       - "6969:80" #${PORT_WEB}
     env_file:

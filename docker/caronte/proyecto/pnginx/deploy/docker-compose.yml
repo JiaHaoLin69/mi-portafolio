@@ -3,9 +3,9 @@ services:
     build:
       context: ${CONTEXTO}
       dockerfile: ./dockerfiles/sweb/nginx/nginx
-    container_name: ${NOMBRE}
+    container_name: nginxclase
     ports:
-      - "${PORT_WEB}:80"     
+      - "6969:80"     
     env_file:
       - ./.env
     image: jiahaolin69/nginxclase

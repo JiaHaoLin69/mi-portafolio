@@ -6,9 +6,9 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
-    # BORRA O COMENTA LA LÍNEA DE REWRITE-TARGET
-    # nginx.ingress.kubernetes.io/rewrite-target: / 
+    # Hemos quitado el rewrite-target aquí
 spec:
+  ingressClassName: nginx
   tls:
     - hosts:
         - portfolio.megacrossover.es
@@ -18,7 +18,7 @@ spec:
       http:
         paths:
           - path: /
-            pathType: ImplementationSpecific # Cambiado para evitar conflictos de captura
+            pathType: Prefix # Cambiado a Prefix para mayor compatibilidad
             backend:
               service:
                 name: portfolio-taller

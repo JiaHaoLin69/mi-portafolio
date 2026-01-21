@@ -1,12 +1,13 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: webtaller-ingress
+  name: webportfolio-ingress
   namespace: proyectoportfolio
   annotations:
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
-    # Hemos quitado el rewrite-target aquí
+    # ESTA LÍNEA ES CLAVE PARA EL ERROR 404:
+    acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
   ingressClassName: nginx
   tls:
@@ -18,7 +19,7 @@ spec:
       http:
         paths:
           - path: /
-            pathType: Prefix # Cambiado a Prefix para mayor compatibilidad
+            pathType: Prefix
             backend:
               service:
                 name: portfolio-taller

@@ -3,6 +3,7 @@ FROM jiahaolin69/nginx
 ARG PROYECTO
 USER root
 
+RUN mkdir -p /root/admin/base/portfolio
 WORKDIR /root/admin/base/portfolio
 COPY ${PROYECTO} /usr/share/nginx/html
 COPY ${PROYECTO} /var/www/html

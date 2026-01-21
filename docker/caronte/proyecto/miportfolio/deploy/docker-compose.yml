@@ -1,12 +1,12 @@
 services:
   web:
     build:
-      context: ${CONTEXTO}
+      context: /home/jiahaolin/jiahaohlc/docker/caronte #${CONTEXTO}
       dockerfile: ./dockerfiles/miportfolio/miporfolio
       args:
-        - PROYECTO=${PROYECTO}
+        - PROYECTO=./proyecto/miportfolio/src/ #${PROYECTO}
     container_name: ctportfolio
     ports:
-      - "${PORT_WEB}:80" 
+      - "6969:80" #${PORT_WEB}
     env_file:
       - ./.env

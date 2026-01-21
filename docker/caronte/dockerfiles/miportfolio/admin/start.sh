@@ -4,13 +4,14 @@ load_entrypoint_nginx(){
     bash /root/admin/sweb/nginx/admin/start.sh
 }
 reload_nginx(){
+    nginx -t
     service nginx reload
+    nginx -g "daemon off;"
 }
 main(){
 
     load_entrypoint_nginx
     reload_nginx
-    tail -f /dev/null
 }
 
 main

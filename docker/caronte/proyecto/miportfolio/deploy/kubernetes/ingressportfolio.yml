@@ -2,18 +2,18 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: webtaller-ingress
-  namespace: proyectotaller
+  namespace: proyectoportfolio
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: webtaller.megacrossover.es
+  - host: portfolio.megacrossover.es
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: webtaller-service
+            name: portfolio-taller
             port:
               number: 80

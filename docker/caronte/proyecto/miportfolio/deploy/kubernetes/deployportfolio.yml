@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment 
 metadata:
-  name: webtaller-deployment
-  namespace: proyectotaller
+  name: webportfolio-deployment
+  namespace: proyectoportfolio
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: webtaller
+      app: webportfolio
   template:
     metadata:
       labels:
-        app: webtaller
+        app: webportfolio
     spec:
       containers:
-      - name: webtaller
-        image: jiahaolin69/webtallerclase
+      - name: webportfolio
+        image: jiahaolin69/miportfolio
         ports:
         - containerPort: 80

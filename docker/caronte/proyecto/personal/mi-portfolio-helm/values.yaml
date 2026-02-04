@@ -1,14 +1,14 @@
 app:
   name: miportfolio
   image: 
-    repository: jiahaolin69/portfolio
+    repository: peedroorgzz/portfolio
     tag: latest
     pullPolicy: Always
   container:
     name: miportfolio
     port: 80
     replicaCount: 3
-  service :
+  service:
     port: 80
     nodePort: 30001
   ingress:

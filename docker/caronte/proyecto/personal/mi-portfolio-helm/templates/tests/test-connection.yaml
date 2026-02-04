@@ -11,5 +11,6 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
+      # Aquí usamos .Values.service.port que ahora sí existe en values.yaml
       args: ['{{ include "mi-portfolio-helm.fullname" . }}:{{ .Values.service.port }}']
   restartPolicy: Never

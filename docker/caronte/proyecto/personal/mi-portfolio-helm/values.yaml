@@ -1,15 +1,36 @@
 app:
   name: miportfolio
-  image: 
+  image:
     repository: jiahaolin69/miportfolio
     tag: latest
     pullPolicy: Always
-  container:
+  # containerPort: 3000   
+  container: 
     name: miportfolio
     port: 80
-    replicaCount: 3
-  service :
-    port: 80
-    nodePort: 30001
+    replicas: 1
+  service:
+    type: NodePort
+    port: 3000
+    nodePort: 30087
   ingress:
     host: portfolio.megacrossover.es
+    port: 80
+
+postgres:
+  name: usuarios-postgres
+  image:
+    repository: postgres
+    tag: "15-alpine"
+    pullPolicy: IfNotPresent
+  service:
+    port: 5432
+  auth:
+    database: bdusuarios
+    username: admin
+    password: admin
+  # Este es el volumen donde se guardarán los datos de PostgreSQL. Si quieres usar un volumen persistente
+  persistence:
+    enabled: true
+    size: 2Gi
+    storageClassName: "microk8s-hostpath"   # pon aquí tu storageClass si quieres fijarla
